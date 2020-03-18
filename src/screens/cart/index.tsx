@@ -5,6 +5,7 @@ import { NavigationInterface } from '../types';
 import { useThemeContext } from '../../theme';
 import { useStoreContext } from '../../store';
 import EmptyCart from './empty-cart';
+import FilledCart from './filled-cart';
 
 import { Container } from './styles';
 
@@ -23,7 +24,7 @@ export default function Cart({ navigation }: CartScreenProp) {
     <SafeAreaView style={{ flex: 1, backgroundColor: colors.BD_DARK_COLOR }}>
       <Container>
         {cartState.cart.length ? (
-          <Button title="nice shoes" />
+          <FilledCart navigation={navigation} cart={cartState.cart} />
         ) : (
           <EmptyCart navigation={navigation} />
         )}

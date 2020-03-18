@@ -115,10 +115,10 @@ export default function AppNavigator() {
                   {cartState.cart.length ? (
                     <CartNotification
                       style={{
-                        width: 8,
-                        height: 8,
+                        width: applyScale(8),
+                        height: applyScale(8),
                         borderRadius: 4,
-                        left: 32
+                        left: applyScale(32)
                       }}
                     />
                   ) : null}

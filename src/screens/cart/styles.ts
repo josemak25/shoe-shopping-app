@@ -41,3 +41,26 @@ export const EmptyCartDescription = styled.Text`
   color: ${({ theme }) => theme.colors.FONT_DARK_COLOR};
   text-align: center;
 `;
+
+export const CartItemNumber = styled.Text`
+  font-size: ${({ theme }) => theme.fonts.SMALL_SIZE - 2}px;
+  font-family: ${({ theme }) => theme.fonts.NOTOSANS_BOLD};
+  color: ${({ theme }) => theme.colors.FONT_DARK_COLOR};
+  text-align: center;
+  text-transform: capitalize;
+  position: absolute;
+  left: ${applyScale(25)}px;
+  bottom: ${applyScale(20)}px;
+`;
+
+export const trollerCartStyles = {
+  width: applyScale(50),
+  height: applyScale(40),
+  position: 'absolute',
+  justifyContent: 'center',
+  alignItems: 'center',
+  left: 0,
+  bottom: applyScale(150),
+  borderTopRightRadius: 5,
+  borderBottomRightRadius: 5
+};

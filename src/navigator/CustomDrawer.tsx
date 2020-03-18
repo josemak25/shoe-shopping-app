@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { TouchableWithoutFeedback } from 'react-native';
 import { DrawerItemList } from '@react-navigation/drawer';
 import ContentLoader from 'react-native-skeleton-content';
