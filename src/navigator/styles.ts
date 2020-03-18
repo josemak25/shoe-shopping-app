@@ -35,7 +35,6 @@ export const StaticDrawerContainer = styled.View`
   background-color: ${({ theme }) => theme.colors.DRAWER_COLOR};
   position: absolute;
   right: -8px;
-  z-index: 1;
 `;
 
 export const StaticDrawerCurve = styled.TouchableOpacity`
