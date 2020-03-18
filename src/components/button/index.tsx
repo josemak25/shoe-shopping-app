@@ -9,14 +9,15 @@ type ButtonProps = {
   testID?: string;
   title: string;
   onPress?(): void;
+  activeOpacity?: number;
 };
 
 export default function Button(props: ButtonProps) {
-  const { title, buttonStyle, textStyle } = props;
+  const { title, buttonStyle, textStyle, activeOpacity } = props;
 
   return (
     <Container
-      activeOpacity={0.5}
+      activeOpacity={activeOpacity | 0.5}
       style={[boxShadow({ elevation: 2 }), buttonStyle]}
       {...props}
     >
