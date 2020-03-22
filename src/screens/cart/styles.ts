@@ -78,7 +78,7 @@ export const CartItemHolder = {
 export const CartItemImageHolder = styled.View`
   width: 50%;
   height: 100%;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.FONT_LIGHT_COLOR};
   flex: 1;
   justify-content: center;
   align-items: center;
@@ -96,7 +96,7 @@ export const CartItemDeleteIconStyles = {
 };
 
 export const CartItemPrice = styled.Text`
-  color: #ff0000;
+  color: ${({ theme }) => theme.colors.ACTION_FONT_COLOR};
 `;
 
 export const CartItemEditPriceHolder = styled.View`
@@ -117,7 +117,7 @@ export const CartItemQtyStyles = {
   borderWidth: 1,
   borderColor: 'black',
   borderRadius: 3,
-  backgroundColor: '#5D6969'
+  backgroundColor: ({ theme }) => theme.colors.FONT_DARK_COLOR
 };
 
 export const CartItemEditBtnStyles = {
@@ -137,7 +137,7 @@ export const CartItemImage = styled.Image``;
 export const CartItemDetailsHolder = styled.View`
   width: 50%;
   height: 100%;
-  background-color: #e6ebee;
+  background-color: ${({ theme }) => theme.colors.FONT_LIGHT_COLOR};
   padding: ${applyScale(10)}px;
 `;
 
@@ -175,7 +175,7 @@ export const FilledCartBtnTwo = {
   borderRadius: 5,
   marginLeft: 10,
   textAlign: 'center',
-  backgroundColor: '#3888C7',
+  backgroundColor: ({ theme }) => theme.colors.DRAWER_COLOR,
   flex: 1,
   justifyContent: 'center',
   alignItems: 'center'
