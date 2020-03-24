@@ -1,15 +1,20 @@
 import styled from 'styled-components/native';
+import applyScale from '../../utils/applyScale';
 
 export const Container = styled.View`
   flex: 1;
-  justify-content: center;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.BD_DARK_COLOR};
 `;
 
-export const Welcome = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.LARGE_SIZE}px;
-  font-family: ${({ theme }) => theme.fonts.NOTOSANS_REGULAR};
-  color: ${({ theme }) => theme.colors.FONT_DARK_COLOR};
-  text-transform: capitalize;
+export const SearchInputWrapper = styled.View`
+  height: ${applyScale(110)}px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-bottom: 10px;
+`;
+
+export const Advert = styled.Image`
+  width: 100%;
 `;
