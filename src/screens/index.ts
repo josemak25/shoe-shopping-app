@@ -5,6 +5,7 @@ import PrivacyAndPolicyScreen from './privacy-policy';
 import TrackOrdersScreen from './track-orders';
 import ProfileScreen from './profile';
 import CartScreen from './cart';
+import WalletScreen from './wallet';
 
 export default {
   HomeScreen,
@@ -13,5 +14,6 @@ export default {
   PrivacyAndPolicyScreen,
   TrackOrdersScreen,
   ProfileScreen,
-  CartScreen
+  CartScreen,
+  WalletScreen
 };
