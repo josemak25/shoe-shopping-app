@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Shoe-Shopper App",
-    "slug": "shoe-shopper-app",
+    "name": "Peaky Sneakers",
+    "slug": "peaky-sneakers",
     "privacy": "public",
     "sdkVersion": "36.0.0",
     "platforms": ["ios", "android", "web"],
