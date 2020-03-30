@@ -51,12 +51,13 @@ export default function Cart({ navigation }: CartScreenProp) {
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderRadius: 25,
+                left: -5,
                 backgroundColor: buttonPressed ? colors.BG_LIGHT_COLOR : null
               }}
             >
               <BackButtonIcon
-                width={`${Platform.OS === 'ios' ? '50%' : '40%'}`}
-                height={`${Platform.OS === 'ios' ? '50%' : '40%'}`}
+                width={`${Platform.OS === 'ios' ? '45%' : '40%'}`}
+                height={`${Platform.OS === 'ios' ? '45%' : '40%'}`}
               />
             </TouchableOpacity>
           )}
@@ -87,25 +88,25 @@ export default function Cart({ navigation }: CartScreenProp) {
                   style={{
                     width: applyScale(8),
                     height: applyScale(8),
-                    borderRadius: 4,
-                    left: applyScale(32)
+                    left: applyScale(32),
+                    borderRadius: 4
                   }}
                 />
               ) : null}
               <CartIcon
                 width="60%"
                 height="60%"
-                fillColor={colors.ACTIVE_TAB_ICON_COLOR}
+                fillColor={colors.FONT_DARK_COLOR}
               />
             </CartContainer>
           )}
-          // style={boxShadow({
-          //   elevation: 2,
-          //   shadowColor: 'rgba(0, 0, 0, 0.5)',
-          //   shadowRadius: 2,
-          //   shadowOpacity: 0.1,
-          //   height: 2
-          // })}
+          style={boxShadow({
+            elevation: 2,
+            shadowColor: 'rgba(0, 0, 0, 0.5)',
+            shadowRadius: 2,
+            shadowOpacity: 0.1,
+            height: 2
+          })}
         />
         <Container>
           {cartState.cart.length ? (
