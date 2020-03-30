@@ -6,12 +6,14 @@ import StoreContext from './types';
 import userReducer, { userInitialState } from './user/reducer';
 import cartReducer, { cartInitialState } from './cart/reducer';
 import productReducer, { productInitialState } from './product/reducer';
+import drawerReducer, { drawerInitialState } from './drawer/reducer';
 
 const StoreProvider: FunctionComponent = ({ children }) => {
   const [state, dispatch] = useCombinedReducers({
     userState: useReducer(userReducer, userInitialState),
     cartState: useReducer(cartReducer, cartInitialState),
-    productState: useReducer(productReducer, productInitialState)
+    productState: useReducer(productReducer, productInitialState),
+    drawerState: useReducer(drawerReducer, drawerInitialState)
   });
 
   return (

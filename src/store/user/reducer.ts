@@ -5,7 +5,7 @@ export const userInitialState: UserInitialState = {
   error: null,
   token: null,
   user: {
-    name: 'Elaine Marshall James Brian',
+    name: 'Elaine Marshall',
     phone: '09032426735',
     email: 'JamesB@gmail.com',
     avatar: 'https://bit.ly/2WldiMc'
