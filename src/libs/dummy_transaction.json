@@ -1,0 +1,20 @@
+[
+  {
+    "transactionType": "shopping",
+    "walletAddress": "08132584758",
+    "amount": "-₦15,000",
+    "id": "5e70a139757b5a8ed955736d"
+  },
+  {
+    "transactionType": "fund wallet",
+    "walletAddress": "08212584758",
+    "amount": "+₦5,000",
+    "id": "5e70a139757b5a8ed955732d"
+  },
+  {
+    "transactionType": "fund transfer",
+    "walletAddress": "08132554758",
+    "amount": "-₦3,000",
+    "id": "5e70a139757b5a8ed955731d"
+  }
+]
