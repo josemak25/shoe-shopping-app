@@ -29,6 +29,9 @@ export default function AppLoading({ setIsAppReady }) {
       },
       {
         'notosans-bold': require('../../../assets/fonts/NotoSans-Bold.ttf')
+      },
+      {
+        effort: require('../../../assets/fonts/Effort.ttf')
       }
     ]);
 
