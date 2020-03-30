@@ -125,7 +125,7 @@ export const CurrentBallanceLabel = styled.Text`
 
 export const WalletLabel = styled.Text`
   font-size: ${({ theme }) => theme.fonts.LARGE_SIZE + 10}px;
-  font-family: ${({ theme }) => theme.fonts.EFFORT};
+  font-family: ${({ theme }) => theme.fonts.EFFORT_REGULAR};
   color: ${({ theme }) => theme.colors.DRAWER_COLOR};
   position: absolute;
   right: 0;
