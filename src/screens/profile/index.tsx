@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Button from '../../components/button';
 import { NavigationInterface } from '../types';
+import StatusBar from '../../commons/status-bar';
 
-import { Container, Welcome } from './styles';
+import { SafeAreaView, Container, Welcome } from './styles';
 
 interface ProfileScreenProp extends NavigationInterface {
   testID?: string;
@@ -10,9 +11,13 @@ interface ProfileScreenProp extends NavigationInterface {
 
 export default function Profile(props: ProfileScreenProp) {
   return (
-    <Container>
-      <Button title="Profile screen button" />
-      <Welcome>Profile Screen</Welcome>
-    </Container>
+    <Fragment>
+      <SafeAreaView>
+        <Container>
+          <Button title="Profile screen button" />
+          <Welcome>Profile Screen</Welcome>
+        </Container>
+      </SafeAreaView>
+    </Fragment>
   );
 }

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Button from '../../components/button';
 import { NavigationInterface } from '../types';
 import { useStoreContext } from '../../store';
 
-import { Container, Welcome } from './styles';
+import { SafeAreaView, Container, Welcome } from './styles';
+import StatusBar from '../../commons/status-bar';
 
 interface HomeScreenProp extends NavigationInterface {
   testID?: string;
@@ -11,9 +12,13 @@ interface HomeScreenProp extends NavigationInterface {
 
 export default function Home(props: HomeScreenProp) {
   return (
-    <Container>
-      <Button title="Home screen button" />
-      <Welcome>Home Screen</Welcome>
-    </Container>
+    <Fragment>
+      <SafeAreaView>
+        <Container>
+          <Button title="Home screen button" />
+          <Welcome>Home Screen</Welcome>
+        </Container>
+      </SafeAreaView>
+    </Fragment>
   );
 }
