@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { TouchableWithoutFeedback } from 'react-native';
-import { DrawerItemList } from '@react-navigation/drawer';
+import {
+  DrawerItemList,
+  DrawerContentScrollView
+} from '@react-navigation/drawer';
 import ContentLoader from 'react-native-skeleton-content';
-import useIsDrawerOpen from '../libs/useDrawerOpen';
 import Animated from 'react-native-reanimated';
 
 import { useThemeContext } from '../theme';
@@ -10,35 +11,34 @@ import { useStoreContext } from '../store';
 import ResponsiveImage from '../libs/responsiveImage';
 import applyScale from '../utils/applyScale';
 import boxShadow from '../utils/boxShadows';
-import FemaleAvatar from '../../assets/icons/female-avatar';
-import { DrawerButtons } from '../../assets/icons/drawer-buttons';
+import SignOutIcon from '../../assets/icons/signout-icon';
 
 import {
   DrawerContainer,
-  StaticDrawerContainer,
-  StaticDrawerCurve,
   ProfileContainer,
   AvatarContainer,
   ProfileName,
   ProfileNumber,
-  ProfileDetailsContainer
+  ProfileDetailsContainer,
+  DrawerItemsContainer,
+  SignOutContainer,
+  SignOutText,
+  SignOutButton
 } from './styles';
 
 const IMAGE_SIZE = applyScale(80);
 
 export default function CustomDrawer(props) {
   const { colors } = useThemeContext();
-  const isDrawerOpen = useIsDrawerOpen();
 
-  const {
-    state: { userState }
-  } = useStoreContext();
+  const { state } = useStoreContext();
 
-  const { user } = userState;
+  const { user } = state.userState;
 
   const [animation, setAnimation] = useState({
     animateImage: new Animated.Value(0),
-    hideContentLoader: true
+    hideContentLoader: true,
+    signOutPressed: false
   });
 
   const handleImageLoading = (error: any) => {
@@ -47,22 +47,14 @@ export default function CustomDrawer(props) {
     }
   };
 
-  const handleDrawer = () => {
-    !isDrawerOpen
-      ? props.navigation.openDrawer()
-      : props.navigation.closeDrawer();
+  const handleSignOutPressed = () => {
+    setAnimation({ ...animation, signOutPressed: !animation.signOutPressed });
   };
+
+  const handleSignOut = () => {};
 
   return (
     <DrawerContainer>
-      <StaticDrawerContainer>
-        <StaticDrawerCurve activeOpacity={1} onPress={handleDrawer}>
-          <DrawerButtons
-            buttonState={isDrawerOpen}
-            fillColor={colors.BG_LIGHT_COLOR}
-          />
-        </StaticDrawerCurve>
-      </StaticDrawerContainer>
       <ProfileContainer>
         <AvatarContainer
           style={[
@@ -82,31 +74,48 @@ export default function CustomDrawer(props) {
               { width: IMAGE_SIZE, height: IMAGE_SIZE, borderRadius: 40 }
             ]}
           />
-
-          {user.avatar ? (
-            <ResponsiveImage
-              imageUrl={user.avatar}
-              width={80}
-              height={80}
-              style={{ borderRadius: 40 }}
-              onLoad={handleImageLoading}
-            />
-          ) : (
-            <TouchableWithoutFeedback onLayout={() => handleImageLoading(null)}>
-              <FemaleAvatar
-                width="70%"
-                height="70%"
-                style={{ position: 'absolute' }}
-              />
-            </TouchableWithoutFeedback>
-          )}
+          <ResponsiveImage
+            imageUrl={user.avatar}
+            width={80}
+            height={80}
+            style={{ borderRadius: 40 }}
+            onLoad={handleImageLoading}
+          />
         </AvatarContainer>
         <ProfileDetailsContainer>
-          <ProfileName>{user.name}</ProfileName>
+          <ProfileName>
+            {user.name.length > 15
+              ? `${user.name.substring(0, 15)}...`
+              : user.name}
+          </ProfileName>
           <ProfileNumber>{user.phone}</ProfileNumber>
         </ProfileDetailsContainer>
       </ProfileContainer>
-      <DrawerItemList {...props} />
+      <DrawerContentScrollView {...props}>
+        <DrawerItemsContainer>
+          <DrawerItemList {...props} />
+        </DrawerItemsContainer>
+        <SignOutContainer>
+          <SignOutButton
+            onPress={handleSignOut}
+            onPressIn={handleSignOutPressed}
+            style={{
+              backgroundColor: animation.signOutPressed
+                ? colors.FUND_WALLET_COLOR
+                : null
+            }}
+            onPressOut={handleSignOutPressed}
+            activeOpacity={0.8}
+          >
+            <SignOutIcon
+              fillColor={colors.BG_LIGHT_COLOR}
+              width="25"
+              height="25"
+            />
+            <SignOutText>signout</SignOutText>
+          </SignOutButton>
+        </SignOutContainer>
+      </DrawerContentScrollView>
     </DrawerContainer>
   );
 }
