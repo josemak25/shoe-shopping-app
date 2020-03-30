@@ -64,3 +64,19 @@ export const trollerCartStyles = {
   borderTopRightRadius: 5,
   borderBottomRightRadius: 5
 };
+
+export const CartContainer = styled.View`
+  width: ${applyScale(27)}px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const CartNotification = styled.View`
+  width: ${applyScale(5)}px;
+  height: ${applyScale(5)}px;
+  border-radius: ${5 / 2}px;
+  background-color: ${({ theme }) => theme.colors.ACTION_FONT_COLOR};
+  position: absolute;
+  top: 1px;
+  left: 1px;
+`;
