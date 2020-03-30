@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react';
-import Button from '../../components/button';
+import { ScrollView } from 'react-native';
 import { NavigationInterface } from '../types';
 import { useThemeContext } from '../../theme';
 import boxShadow from '../../utils/boxShadows';
 import { ProductInterface } from '../../store/product/types';
 import TrollerCartIcon from '../../../assets/icons/troller-icon';
+import Card from '../../components/card';
 
 import { Container, trollerCartStyles, CartItemNumber } from './styles';
-import Card from '../../components/card';
 
 interface CartProp extends NavigationInterface {
   testID?: string;
@@ -43,6 +43,9 @@ export default function FilledCart(props: CartProp) {
           />
         </Fragment>
       </Card>
+      <ScrollView
+        contentContainerStyle={{ flexGrow: 1, width: '100%' }}
+      ></ScrollView>
     </Container>
   );
 }
