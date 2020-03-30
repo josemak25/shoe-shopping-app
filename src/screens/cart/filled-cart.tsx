@@ -38,7 +38,7 @@ export default function FilledCart(props: CartProp) {
         <Fragment>
           <CartItemNumber>{props.cart.length}</CartItemNumber>
           <TrollerCartIcon
-            fillColor={colors.ACTIVE_TAB_ICON_COLOR}
+            fillColor={colors.FONT_DARK_COLOR}
             style={{ top: 5 }}
           />
         </Fragment>
