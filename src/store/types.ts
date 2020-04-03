@@ -15,7 +15,7 @@ type DispatchTypes = UserAction | CartAction | ProductAction | DrawerAction;
 
 // We define our type for the context properties right here
 interface ContextProps {
-  state: {
+  store: {
     userState: UserInitialState;
     cartState: CartInitialState;
     productState: ProductInitialState;
@@ -25,7 +25,7 @@ interface ContextProps {
 }
 
 const StoreContext = createContext<ContextProps>({
-  state: {
+  store: {
     userState: userInitialState,
     cartState: cartInitialState,
     productState: productInitialState,

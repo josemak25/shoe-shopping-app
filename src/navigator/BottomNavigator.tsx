@@ -18,7 +18,7 @@ export default function BottomNavigator() {
   const { colors } = useThemeContext();
 
   const {
-    state: { cartState }
+    store: { cartState }
   } = useStoreContext();
 
   return (

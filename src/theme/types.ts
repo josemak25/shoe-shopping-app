@@ -9,7 +9,8 @@ enum COLORS {
   DRAWER_COLOR = '#5c2966',
   ACTION_FONT_COLOR = '#FF0000',
   FUND_WALLET_COLOR = '#875F8D',
-  NOTIFICATION_HIGHLIGHT_COLOR = '#52de97'
+  NOTIFICATION_HIGHLIGHT_COLOR = '#52de97',
+  CART_CARD_COLOR = 'rgba(230, 235, 238, .7)'
 }
 
 // All app font sizes
@@ -20,6 +21,7 @@ enum FONTS {
   NOTOSANS_REGULAR = 'notosans-regular',
   NOTOSANS_BOLD = 'notosans-bold',
   EFFORT_REGULAR = 'effort',
+  ROBOTO_MONO_REGULAR = 'roboto-mono-regular',
   FONT_WEIGHT_LIGHT = 200,
   FONT_WEIGHT_MEDIUM = 600,
   FONT_WEIGHT_HEAVY = 800
@@ -37,6 +39,7 @@ declare module 'styled-components' {
       ACTION_FONT_COLOR: string;
       FUND_WALLET_COLOR: string;
       NOTIFICATION_HIGHLIGHT_COLOR: string;
+      CART_CARD_COLOR: string;
     };
 
     // All Global App Font Sizes
@@ -47,6 +50,7 @@ declare module 'styled-components' {
       NOTOSANS_REGULAR: string;
       NOTOSANS_BOLD: string;
       EFFORT_REGULAR: string;
+      ROBOTO_MONO_REGULAR: string;
       FONT_WEIGHT_LIGHT: number;
       FONT_WEIGHT_MEDIUM: number;
       FONT_WEIGHT_HEAVY: number;

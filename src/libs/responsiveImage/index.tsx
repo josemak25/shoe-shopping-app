@@ -12,6 +12,7 @@ type ResponsiveImageProps = {
   resizeMode?: string;
   style?: any;
   imageUrl: string;
+  offlineImage?: number;
   testID?: string;
   imageFadeDuration?: number;
   thumbnailSource?: object;
@@ -37,6 +38,8 @@ export default function ResponsiveImage(props: ResponsiveImageProps) {
   const imageFadeDuration = props.imageFadeDuration || 250;
   const thumbnailBlurRadius = props.thumbnailBlurRadius || 10;
   const thumbnailSource = props.thumbnailSource || props.imageUrl;
+
+  const onlineImage = { uri: props.imageUrl, cache: 'force-cache' };
 
   const onLoadThumbnail = () => {
     Animated.timing(animation.thumbnailOpacity, {
@@ -71,11 +74,10 @@ export default function ResponsiveImage(props: ResponsiveImageProps) {
 
       <ProgressiveImage
         style={[
-          { width, height, resizeMode },
-          { opacity: animation.imageOpacity },
+          { width, height, resizeMode, opacity: animation.imageOpacity },
           props.style
         ]}
-        source={{ uri: props.imageUrl, cache: 'force-cache' }}
+        source={props.offlineImage ? props.offlineImage : onlineImage}
         onLoadStart={props.onLoadStart}
         onProgress={props.onLoadStart}
         onLoad={onLoadImage}

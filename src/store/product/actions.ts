@@ -1,4 +1,10 @@
-import { PRODUCT_TYPES, ProductAction, ProductInterface } from './types';
+import dummyProducts from '../../libs/product-data';
+import {
+  PRODUCT_TYPES,
+  PRODUCT_ACTION_TYPES,
+  ProductAction,
+  ProductInterface
+} from './types';
 
 const getProductStarted = (): ProductAction => ({
   type: PRODUCT_TYPES.GET_PRODUCT_STARTED
@@ -14,8 +20,34 @@ const getProductError = (error: string): ProductAction => ({
   payload: error
 });
 
-export default function productActions() {
-  return (dispatch: any) => {
-    // To unsubscribe to these update, just use the functions:
-  };
+export default function productActions(
+  dispatch: any,
+  payload: object,
+  actionType: string
+) {
+  // test calling for more post
+  dispatch(getProductStarted());
+
+  switch (actionType) {
+    case PRODUCT_ACTION_TYPES.GET_LASTED_PRODUCTS:
+      try {
+        // make network request here
+        dispatch(getProductSuccess(dummyProducts));
+      } catch (error) {
+        dispatch(getProductError('ERROR'));
+      }
+      break;
+
+    case PRODUCT_ACTION_TYPES.LOAD_MORE_PRODUCTS:
+      try {
+        // make network request here
+        dispatch(getProductSuccess(dummyProducts));
+      } catch (error) {
+        dispatch(getProductError('ERROR'));
+      }
+      break;
+
+    default:
+      break;
+  }
 }

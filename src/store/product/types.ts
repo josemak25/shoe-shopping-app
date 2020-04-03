@@ -11,6 +11,12 @@ export enum PRODUCT_TYPES {
   GET_PRODUCT_ERROR = 'GET_PRODUCT_ERROR'
 }
 
+// PRODUCT ACTION TYPES
+export enum PRODUCT_ACTION_TYPES {
+  GET_LASTED_PRODUCTS = 'GET_LASTED_PRODUCTS',
+  LOAD_MORE_PRODUCTS = 'LOAD_MORE_PRODUCTS'
+}
+
 export interface ProductInterface {
   id: string;
   price: string;

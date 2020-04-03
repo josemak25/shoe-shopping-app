@@ -1,10 +1,10 @@
 import { PRODUCT_TYPES, ProductAction, ProductInitialState } from './types';
-import { DATA } from '../../libs/product-data';
+import dummyProduct from '../../libs/product-data';
 
 export const productInitialState: ProductInitialState = {
   isLoading: false,
   error: null,
-  products: [...DATA]
+  products: [...dummyProduct]
 };
 
 export default function cartReducer(

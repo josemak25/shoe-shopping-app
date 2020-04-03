@@ -17,6 +17,8 @@ import StatusBar from '../../commons/status-bar';
 import DrawerButton from '../../../assets/icons/drawer-menu-icon';
 import dummyTransactions from '../../libs/dummy_transaction.json';
 import beneficiaries from '../../libs/dummy_funded_users.json';
+import Input from '../../components/input';
+import { InputLabel } from '../../components/input/styles';
 
 import {
   Container,
@@ -28,9 +30,7 @@ import {
   NotificationIconHeight,
   FundWalletContainer,
   FundWalletPlusIcon,
-  WalletInput,
   WalletLabel,
-  WalletInputLabel,
   CurrentBallanceLabel,
   CurrentWalletBallance,
   WalletAddress,
@@ -110,12 +110,12 @@ export default function Wallet(props: WalletScreenProp) {
             </NotificationContainer>
           </HeaderContainerTop>
           <FundWalletContainer>
-            <WalletInput
+            <Input
               placeholder="Enter amount  __₦1000__"
               defaultValue={state.personalWallet}
               onChangeText={handleChange}
             />
-            <WalletInputLabel>fund personal wallet</WalletInputLabel>
+            <InputLabel>fund personal wallet</InputLabel>
             <FundWalletPlusIcon activeOpacity={0.5}>
               <PlusIcon fillColor={colors.BG_LIGHT_COLOR} />
             </FundWalletPlusIcon>

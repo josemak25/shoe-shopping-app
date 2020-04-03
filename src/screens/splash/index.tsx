@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import Button from '../../components/button';
 import { NavigationInterface } from '../types';
 
-import { Container, Welcome } from './styles';
+import { Container, Logo } from './styles';
 
 interface SplashScreenProp extends NavigationInterface {
   testID?: string;
@@ -15,5 +14,9 @@ export default function Splash({ navigation }: SplashScreenProp) {
     }, 2000);
   }, []);
 
-  return <Container></Container>;
+  return (
+    <Container>
+      <Logo source={require('../../../assets/images/splash.png')} />
+    </Container>
+  );
 }

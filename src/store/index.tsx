@@ -9,7 +9,7 @@ import productReducer, { productInitialState } from './product/reducer';
 import drawerReducer, { drawerInitialState } from './drawer/reducer';
 
 const StoreProvider: FunctionComponent = ({ children }) => {
-  const [state, dispatch] = useCombinedReducers({
+  const [store, dispatch] = useCombinedReducers({
     userState: useReducer(userReducer, userInitialState),
     cartState: useReducer(cartReducer, cartInitialState),
     productState: useReducer(productReducer, productInitialState),
@@ -17,7 +17,7 @@ const StoreProvider: FunctionComponent = ({ children }) => {
   });
 
   return (
-    <StoreContext.Provider value={{ state, dispatch }}>
+    <StoreContext.Provider value={{ store, dispatch }}>
       {children}
     </StoreContext.Provider>
   );

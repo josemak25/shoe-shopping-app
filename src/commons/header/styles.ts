@@ -1,6 +1,5 @@
 import styled from 'styled-components/native';
 import applyScale from '../../utils/applyScale';
-import { Platform } from 'react-native';
 
 export const Container = styled.View`
   width: 100%;
@@ -9,7 +8,6 @@ export const Container = styled.View`
   justify-content: space-between;
   align-items: center;
   background-color: ${({ theme }) => theme.colors.BD_DARK_COLOR};
-  ${Platform.select({ android: { top: 35 } })};
   z-index: 999;
 `;
 

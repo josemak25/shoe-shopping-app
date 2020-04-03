@@ -30,7 +30,7 @@ export default function Transaction(props: TransactionProp) {
         <TransactionTypeIconContainer>
           {transactionType === 'fund wallet' && (
             <WalletIcon
-              fillColor={colors.ACTIVE_TAB_ICON_COLOR}
+              fillColor={colors.FONT_DARK_COLOR}
               width="50%"
               height="50%"
               isFocused
@@ -39,7 +39,7 @@ export default function Transaction(props: TransactionProp) {
 
           {transactionType === 'shopping' && (
             <CartIcon
-              fillColor={colors.ACTIVE_TAB_ICON_COLOR}
+              fillColor={colors.FONT_DARK_COLOR}
               isFocused
               width="50%"
               height="50%"
@@ -47,7 +47,7 @@ export default function Transaction(props: TransactionProp) {
           )}
 
           {transactionType === 'fund transfer' && (
-            <FundWalletIcon fillColor={colors.ACTIVE_TAB_ICON_COLOR} />
+            <FundWalletIcon fillColor={colors.FONT_DARK_COLOR} />
           )}
         </TransactionTypeIconContainer>
         <TransactionTypeContainer>

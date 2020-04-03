@@ -4,7 +4,6 @@ import {
   DrawerContentScrollView
 } from '@react-navigation/drawer';
 import ContentLoader from 'react-native-skeleton-content';
-import Animated from 'react-native-reanimated';
 
 import { useThemeContext } from '../theme';
 import { useStoreContext } from '../store';
@@ -31,12 +30,13 @@ const IMAGE_SIZE = applyScale(80);
 export default function CustomDrawer(props) {
   const { colors } = useThemeContext();
 
-  const { state } = useStoreContext();
+  const {
+    store: { userState }
+  } = useStoreContext();
 
-  const { user } = state.userState;
+  const { user } = userState;
 
   const [animation, setAnimation] = useState({
-    animateImage: new Animated.Value(0),
     hideContentLoader: true,
     signOutPressed: false
   });

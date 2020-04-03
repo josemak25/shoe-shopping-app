@@ -77,29 +77,6 @@ export const FundWalletContainer = styled.View`
   bottom: 20px;
 `;
 
-export const WalletInput = styled.TextInput`
-  flex: 0.8;
-  height: 100%;
-  font-size: ${({ theme }) => theme.fonts.MEDIUM_SIZE}px;
-  font-family: ${({ theme }) => theme.fonts.NOTOSANS_BOLD};
-  color: ${({ theme }) => theme.colors.FONT_DARK_COLOR};
-  background-color: ${({ theme }) => theme.colors.BG_LIGHT_COLOR};
-  border-radius: 3px;
-  padding: 0px 15px;
-  padding-left: 25px;
-  text-transform: capitalize;
-`;
-
-export const WalletInputLabel = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.SMALL_SIZE + 3}px;
-  font-family: ${({ theme }) => theme.fonts.NOTOSANS_BOLD};
-  color: ${({ theme }) => theme.colors.FONT_LIGHT_COLOR};
-  text-transform: capitalize;
-  position: absolute;
-  top: -25px;
-  padding-left: 2px;
-`;
-
 export const FundWalletPlusIcon = styled.TouchableOpacity`
   width: ${applyScale(50)}px;
   height: 100%;
@@ -142,12 +119,14 @@ export const CurrentWalletBallance = styled.Text`
 `;
 
 export const WalletAddress = styled.Text`
-  font-size: ${({ theme }) => theme.fonts.MEDIUM_SIZE + 1}px;
-  font-family: ${({ theme }) => theme.fonts.NOTOSANS_BOLD};
+  flex: 1;
+  font-size: ${({ theme }) => theme.fonts.LARGE_SIZE + 5}px;
+  font-family: ${({ theme }) => theme.fonts.ROBOTO_MONO_REGULAR};
   color: ${({ theme }) => theme.colors.FONT_DARK_COLOR};
-  text-transform: capitalize;
   padding: 30px 0px;
-  letter-spacing: 1px;
+  letter-spacing: 13px;
+  text-align: center;
+  opacity: 0.7;
 `;
 
 export const CardType = styled.Text`
@@ -169,12 +148,14 @@ export const WalletCardFooter = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  bottom: -5px;
+  position: absolute;
+  align-self: center;
+  bottom: 15px;
 `;
 
 export const FundOtherWalletContainer = styled.View`
   width: 100%;
-  height: ${applyScale(140)}px;
+  height: ${applyScale(125)}px;
   justify-content: space-between;
   margin-top: 30px;
 `;

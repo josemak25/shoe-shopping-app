@@ -1,7 +1,6 @@
 import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Dimensions, Platform } from 'react-native';
-import Constants from 'expo-constants';
+import { Dimensions, Platform, StatusBar } from 'react-native';
 import { useThemeContext } from '../theme';
 
 import Screens from '../screens';
@@ -32,7 +31,7 @@ export default function DrawerNavigator() {
         ...Platform.select({
           android: {
             height: Dimensions.get('window').height,
-            top: Constants.statusBarHeight
+            top: StatusBar.currentHeight
           }
         })
       }}

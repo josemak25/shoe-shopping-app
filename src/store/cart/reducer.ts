@@ -1,8 +1,8 @@
 import { CART_TYPES, CartAction, CartInitialState } from './types';
-import dummyProduct from '../../libs/dummy_product.json';
+import dummyProduct from '../../libs/product-data';
 
 export const cartInitialState: CartInitialState = {
-  cart: [dummyProduct]
+  cart: [...dummyProduct]
 };
 
 export default function cartReducer(
