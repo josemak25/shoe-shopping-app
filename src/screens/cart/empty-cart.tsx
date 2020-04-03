@@ -25,7 +25,7 @@ export default function EmptyCart(props: EmptyCartProp) {
   return (
     <Fragment>
       <EmptyCartContainer>
-        <EmptyCartIcon style={{ position: 'absolute', top: 50 }} />
+        <EmptyCartIcon />
       </EmptyCartContainer>
       <EmptyCartTextContainer>
         <EmptyCartTextHolder>
@@ -57,6 +57,7 @@ export default function EmptyCart(props: EmptyCartProp) {
             })
           ]}
           onPress={continueShopping}
+          activeOpacity={0.4}
         />
       </EmptyCartTextContainer>
     </Fragment>

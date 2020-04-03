@@ -1,8 +1,8 @@
-export const DATA = [
+export default [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'Saucony LOW RED',
-    price: '$44.99',
+    title: 'Saucony LOW RED IPod Nano',
+    price: '₦14,499.99',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -16,7 +16,7 @@ export const DATA = [
   {
     id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦10,499.99',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -30,7 +30,7 @@ export const DATA = [
   {
     id: '58694a0f-3da1-471f-bd96-145571e29d72',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦9,499.99',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -44,7 +44,7 @@ export const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad2wabb28ba',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦5,000.00',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -58,7 +58,7 @@ export const DATA = [
   {
     id: '3ac68afc-c605-48d3-a4f8-fbjhg1aa97f63',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦9,000.00',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -72,7 +72,7 @@ export const DATA = [
   {
     id: '58694a0f-3da1-471f-bd96-10i5571e29d72',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦11,000.00',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -86,7 +86,7 @@ export const DATA = [
   {
     id: '586949f-3da1-471f-bd96-145571e29d72',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦22,499.99',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -100,7 +100,7 @@ export const DATA = [
   {
     id: 'bd7bea-c1b1-46c2-aed5-3ad2wabb28ba',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦6,499.99',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -114,7 +114,7 @@ export const DATA = [
   {
     id: '3aafc-c605-48d3-a4f8-fbjhg1aa97f63',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦4,499.99',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',
@@ -128,7 +128,7 @@ export const DATA = [
   {
     id: '5869409hf-3da1-471f-bd96-10i5571e29d72',
     title: 'Saucony LOW RED',
-    price: '$44.99',
+    price: '₦11,499.99',
     product_id: '5e70a139757b5a8ed955736d',
     quantity: 100,
     vendor_id: '5e70a172a1171fac9e531a39',

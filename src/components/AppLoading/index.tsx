@@ -20,14 +20,7 @@ export default function AppLoading({ setIsAppReady }) {
   const loadAllAppAssets = async () => {
     const imageAssets = cacheImages([
       require('../../../assets/icon.png'),
-      require('../../../assets/splash.png'),
-      require('../../../assets/images/shoe1.png'),
-      require('../../../assets/images/shoe2.png'),
-      require('../../../assets/images/shoe3.png'),
-      require('../../../assets/images/shoe4.png'),
-      require('../../../assets/images/shoe5.png'),
-      require('../../../assets/images/shoe6.png'),
-      require('../../../assets/images/mask-group.png')
+      require('../../../assets/images/advert.png')
     ]);
 
     const fontAssets = cacheFonts([
@@ -36,6 +29,12 @@ export default function AppLoading({ setIsAppReady }) {
       },
       {
         'notosans-bold': require('../../../assets/fonts/NotoSans-Bold.ttf')
+      },
+      {
+        effort: require('../../../assets/fonts/Effort.ttf')
+      },
+      {
+        'roboto-mono-regular': require('../../../assets/fonts/RobotoMono-Regular.ttf')
       }
     ]);
 

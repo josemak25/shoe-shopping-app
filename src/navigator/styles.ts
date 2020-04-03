@@ -1,22 +1,6 @@
 import styled from 'styled-components/native';
 import applyScale from '../utils/applyScale';
 
-export const CartContainer = styled.View`
-  width: ${applyScale(27)}px;
-  justify-content: center;
-  align-items: center;
-`;
-
-export const CartNotification = styled.View`
-  width: ${applyScale(5)}px;
-  height: ${applyScale(5)}px;
-  border-radius: ${5 / 2}px;
-  background-color: ${({ theme }) => theme.colors.ACTION_FONT_COLOR};
-  position: absolute;
-  top: 1px;
-  left: 1px;
-`;
-
 export const TabBarLabel = styled.Text`
   font-size: ${({ theme }) => theme.fonts.SMALL_SIZE - 2}px;
   font-family: ${({ theme }) => theme.fonts.NOTOSANS_REGULAR};
@@ -28,30 +12,40 @@ export const DrawerContainer = styled.View`
   align-items: center;
 `;
 
-export const StaticDrawerContainer = styled.View`
-  width: ${applyScale(10)}px;
-  height: 100%;
+export const DrawerItemsContainer = styled.View`
+  width: 90%;
   align-items: center;
-  background-color: ${({ theme }) => theme.colors.DRAWER_COLOR};
-  position: absolute;
-  right: -8px;
+  margin-top: 20px;
+  margin-bottom: 80px;
+  padding-bottom: 20px;
+  border-bottom-width: 1px;
+  border-color: rgba(255, 255, 255, 0.2);
 `;
 
-export const StaticDrawerCurve = styled.TouchableOpacity`
-  width: ${applyScale(120)}px;
-  height: ${applyScale(120)}px;
-  justify-content: center;
-  align-items: flex-end;
-  background-color: ${({ theme }) => theme.colors.DRAWER_COLOR};
-  position: absolute;
-  top: 80px;
-  right: -25px;
-  border-radius: 100px;
-  z-index: -1;
-  padding-right: 5px;
+export const SignOutContainer = styled.View`
+  flex: 1;
+  width: 90%;
+`;
+
+export const SignOutButton = styled.TouchableOpacity`
+  width: 100%;
+  height: ${applyScale(60)}px;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0px 10px;
+`;
+
+export const SignOutText = styled.Text`
+  font-size: ${({ theme }) => theme.fonts.LARGE_SIZE + 2}px;
+  font-family: ${({ theme }) => theme.fonts.NOTOSANS_BOLD};
+  color: ${({ theme }) => theme.colors.BG_LIGHT_COLOR};
+  text-transform: capitalize;
+  margin: 0px 30px;
 `;
 
 export const ProfileContainer = styled.View`
+  width: 90%;
   height: ${applyScale(200)}px;
   flex-direction: row;
   justify-content: space-between;
@@ -68,7 +62,7 @@ export const AvatarContainer = styled.View`
   justify-content: center;
   align-items: center;
   border-radius: 40px;
-  margin: 0px 10px;
+  margin-right: 10px;
   background-color: ${({ theme }) => theme.colors.BG_LIGHT_COLOR};
 `;
 

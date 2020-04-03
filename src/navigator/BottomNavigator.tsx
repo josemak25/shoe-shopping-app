@@ -6,17 +6,19 @@ import { useStoreContext } from '../store';
 import Screens from '../screens';
 import HomeIcon from '../../assets/icons/home-icon';
 import ProfileIcon from '../../assets/icons/profile-icon';
+import WalletIcon from '../../assets/icons/wallet';
 import CartIcon from '../../assets/icons/cart-icon';
 
-import { TabBarLabel, CartContainer, CartNotification } from './styles';
+import { TabBarLabel } from './styles';
+import { CartContainer, CartNotification } from '../screens/cart/styles';
 
 const Tab = createMaterialBottomTabNavigator();
 
-export default function BottomNavigator(props) {
+export default function BottomNavigator() {
   const { colors } = useThemeContext();
 
   const {
-    state: { cartState }
+    store: { cartState }
   } = useStoreContext();
 
   return (
@@ -36,29 +38,25 @@ export default function BottomNavigator(props) {
         }}
       />
       <Tab.Screen
+        name="WalletScreen"
+        component={Screens.WalletScreen}
+        options={{
+          tabBarLabel: <TabBarLabel>wallet</TabBarLabel>,
+          tabBarIcon: ({ color, focused }) => (
+            <WalletIcon fillColor={color} isFocused={focused} />
+          )
+        }}
+      />
+      <Tab.Screen
         name="Cart"
-        children={() => null}
+        component={Screens.CartScreen}
         options={{
           tabBarLabel: <TabBarLabel>cart</TabBarLabel>,
           tabBarIcon: ({ color, focused }) => {
-            const tabState = props.route.state;
-
-            if (tabState) {
-              const { history } = tabState;
-              const [previousScreen] = history[history.length - 2]['key'].split(
-                '-'
-              );
-
-              if (focused && tabState.index === 1) {
-                props.navigation.navigate('CartScreen');
-                props.route.state.index =
-                  previousScreen === 'HomeScreen' ? 0 : 2;
-              }
-            }
             return (
               <CartContainer>
                 {cartState.cart.length ? <CartNotification /> : null}
-                <CartIcon fillColor={color} />
+                <CartIcon fillColor={color} isFocused={focused} />
               </CartContainer>
             );
           }
